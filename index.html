@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      background-color: lightgreen;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+    span {
+      display: block;
+      margin-bottom: 5px;
+    }
+  </style>
+  <head>
+    <title>Hello World</title>
+    
+  </head>
+  <body>
+    <script>
+        // Array of student names and their scores
+        const students = [
+          { name: "Wang", score: 80 },
+          { name: "Chen", score: 75 },
+          { name: "Zhao", score: 92 },
+          { name: "Liu", score: 60 },
+          { name: "Yamamoto", score: 91 },
+          { name: "Tanaka", score: 82 },
+        ];
+  
+        // Calculate total score
+        let totalScore = 0;
+        for (let i = 0; i < students.length; i++) {
+          totalScore += students[i].score;
+        }
+  
+        // Calculate average score
+        const averageScore = totalScore / students.length;
+  
+        // Display students and their scores
+        document.write(
+          "<p>There are " +
+            students.length +
+            " students. Their scores are as follows.</p>"
+        );
+        for (let i = 0; i < students.length; i++) {
+          document.write(
+            "<span>" + students[i].name + " : " + students[i].score + "</span>"
+          );
+        }
+  
+        // Display students who scored over 90
+        document.write("<p>The following students are students who can get A.</p>");
+        for (let i = 0; i < students.length; i++) {
+          if (students[i].score > 90) {
+            document.write(
+              "<span>" + students[i].name + " : " + students[i].score + "</span>"
+            );
+          }
+        }
+  
+        // Display total score and average score
+        document.write("<p>Total score is " + totalScore + ".</p>");
+        document.write("<p>The average score is " + averageScore + ".</p>");
+  
+        // Sort students by score in descending order
+        students.sort((a, b) => b.score - a.score);
+  
+        // Display students sorted by score
+        document.write("<p>Sort scores in descending order.</p>");
+        for (let i = 0; i < students.length; i++) {
+          document.write(
+            "<span>" + students[i].name + " : " + students[i].score + "</span>"
+          );
+        }
+      </script>
+    
+  </body>
+</html>
